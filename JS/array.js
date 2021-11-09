@@ -86,14 +86,19 @@ const pizza = [
 
 for(let cont = 0; cont < pizza.length; cont++){
     let promoDia = pizza[cont].promoção
+    let valor = 50;
+ 
     function promocaoDoDia(){
         if(promoDia == true){
-            return  'está com desconto de 25%';
+            let desc = (valor * 0.25);
+            let totalDesc = valor - desc;
+            return `está por apenas $${totalDesc} reais, promoção do dia 25% de desconto. Proveite`
+        
         }else{
             return 'não está na promoção';
         }
         
     }
-    console.log(`A pizza ${pizza[cont].sabor.toUpperCase()} ou ${pizza[cont].sabor.substr(1,5)}, ${promocaoDoDia()}`)
+    console.log(`A pizza ${pizza[cont].sabor.toUpperCase()} ou ${pizza[cont].sabor.substr(1,5)} de $${valor} reais, ${promocaoDoDia()}!`)
 }
 
